@@ -1,27 +1,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>be.gallifreyan.mongo</groupId>
+	<parent>
+		<groupId>be.gallifreyan.nosql</groupId>
+		<artifactId>nosql-examples-mongo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<artifactId>mongo-mjorm</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<mjorm.version>1.0-RC2</mjorm.version>	
+		<jot.version>0.4</jot.version>	
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.googlecode</groupId>
 			<artifactId>mongo-java-orm</artifactId>
-			<version>1.0-RC2</version>
+			<version>${mjorm.version}</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/resources/mongo-java-orm-1.0-RC2.jar</systemPath>
+			<systemPath>${basedir}/src/main/resources/mongo-java-orm-${mjorm.version}.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode</groupId>
+			<artifactId>jot</artifactId>
+			<version>${jot.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/jot-${jot.version}.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>2.7.3</version>
+			<version>${mongo.driver.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

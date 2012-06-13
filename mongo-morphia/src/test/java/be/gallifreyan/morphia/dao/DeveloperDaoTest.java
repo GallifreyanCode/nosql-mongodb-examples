@@ -9,7 +9,7 @@ import be.gallifreyan.morphia.AbstractTest;
 import be.gallifreyan.morphia.Developer;
 import be.gallifreyan.morphia.Project;
 
-public class DaoTest extends AbstractTest {
+public class DeveloperDaoTest extends AbstractTest {
 
 	@Test
 	public void testDao() {
