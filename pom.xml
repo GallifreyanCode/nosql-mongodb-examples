@@ -5,13 +5,31 @@
 	<artifactId>nosql-examples-mongo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
 	<properties>
+		<java.version>1.7</java.version>
+		<junit.version>4.10</junit.version>
+		<compiler.plugin.version>2.5.1</compiler.plugin.version>
 		<mongo.driver.version>2.7.3</mongo.driver.version>
 	</properties>
-	
+
 	<modules>
 		<module>mongo-morphia</module>
 		<module>mongo-mjorm</module>
 	</modules>
+	
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
